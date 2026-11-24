@@ -1,0 +1,24 @@
+[project]
+name = "lab4-city"
+version = "0.1.0"
+description = "Lab 4: Data Persistence & Web Interfaces (Variant 20 - City)"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115.0",
+    "psycopg[binary]>=3.2.0",
+    "sqlmodel>=0.0.22",
+    "uvicorn>=0.32.0",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.13.0",
+    "ruff>=0.8.0",
+]
+
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = ["fastapi.Depends"]
